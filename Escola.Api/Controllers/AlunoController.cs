@@ -2,6 +2,8 @@
 using InterfocusConsole.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using InterfocusConsole.Services;
+using InterfocusConsole.Entidades;
 
 namespace Escola.Api.Controllers
 {

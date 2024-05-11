@@ -1,27 +1,30 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace InterfocusConsole.Entidades
+namespace  InterfocusConsole.Entidades
 {
-    public class Curso
-    {
-        public int Id { get; set; }
-        [Required, StringLength(50, MinimumLength = 8)]
-        public string Nome { get; set; }
-        [Required]
-        public string Descricao { get; set; }
-        // 0 - iniciante, 1 - intermediario, 2 - avançado, 3 - expert
-        public NivelCurso Nivel { get; set; }
-        public int Duracao { get; set; }
+    public class Curso{
+        public virtual int Id {get; set;}
 
-        void Metodo()
-        {
-            if (Nivel == NivelCurso.Iniciante) { }// faz alguma coisa
-            else if (Nivel == NivelCurso.Intermediario) { } // faz outra coisa 
-        }
+        public virtual string Nome { get; set; }
+
+        public virtual string Descricao {get; set;}
+
+        public virtual NivelCurso Nivel {get; set;}
+        // 0 - iniciante 1 - intermediario 2 - avançado 3 - expert
+        public virtual int Duracao {get; set;}
+
+        // void metodo(){
+        //     if (Nivel == NivelCurso.Intermediario)
+        // }
+
     }
 
-    public enum NivelCurso
-    {
+    public enum NivelCurso{
         Iniciante = 0,
         Intermediario = 1,
         Avancado = 2,

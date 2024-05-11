@@ -1,4 +1,4 @@
-﻿using InterfocusConsole.Entidades;
+using InterfocusConsole.Entidades;
 using InterfocusConsole.Services;
 using Microsoft.AspNetCore.Mvc;
 using NHibernate;
