@@ -1,11 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace  InterfocusConsole.Entidades
+﻿namespace InterfocusConsole.Entidades
 {
     public class Curso{
         public virtual int Id {get; set;}

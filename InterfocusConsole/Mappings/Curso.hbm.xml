@@ -14,16 +14,22 @@
 			</generator>
 		</id>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4cc339f (arquivos do prof)
 		<property name="Nome"		type="string"		length="50"		/>
 		<property name="Descricao"  type="string"		length="5000"	/>
 		<property name="Duracao"	type="int"			not-null="true"	/>
 		<property name="Nivel"		not-null="true"		/>
+<<<<<<< HEAD
 =======
 		<property name="Nome"		type="string"	length="50"		/>
 		<property name="Descricao"  type="string"	length="5000"	/>
 		<property name="Nivel"		not-null="true"					/>
 		<property name="Duracao"	type="int"		not-null="true"	/>
 >>>>>>> 5e7e59e (Incluido banco de dados postgresql e nhibernate)
+=======
+>>>>>>> 4cc339f (arquivos do prof)
 		
 	</class>
 
