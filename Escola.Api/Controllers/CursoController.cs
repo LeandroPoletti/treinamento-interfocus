@@ -19,7 +19,9 @@ namespace Escola.Api.Controllers
         [HttpGet]
         public IActionResult GetCursos(string busca = null)
         {
-            var dados = service.Listar();
+            var dados = busca == null ? 
+                            service.Listar() :
+                            service.Listar(busca);
             return Ok(dados);
         }
 
