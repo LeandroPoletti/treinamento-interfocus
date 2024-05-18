@@ -19,9 +19,7 @@ namespace Escola.Api.Controllers
         [HttpGet]
         public IActionResult GetCursos(string busca = null)
         {
-            var dados = busca == null ? 
-                            service.Listar() :
-                            service.Listar(busca);
+            var dados = service.Listar();
             return Ok(dados);
         }
 
@@ -47,12 +45,4 @@ namespace Escola.Api.Controllers
             return valido ? Ok(valido) : UnprocessableEntity(erros);
         }
     }
-<<<<<<< HEAD
 }
-=======
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> d0a0678 (adicionado nhibernate e mapeamento)
->>>>>>> 1704dbe (arquivos prof)
