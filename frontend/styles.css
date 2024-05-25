@@ -62,7 +62,6 @@ thead th {
     padding-left: 8px;
     padding-top: 4px;
     padding-right: 8px;
-    text-align: left;
 }
 
 thead > tr {
@@ -73,13 +72,13 @@ tbody tr {
     background-color: aquamarine;
 }
 
-tbody td {
-    padding: 8px;
-}
-
-tbody tr:hover, tbody tr.selected {
+tbody tr:hover {
     background-color: #57b797;
     cursor: pointer;
+}
+
+tbody td {
+    padding: 4px;
 }
 
 a.crud {
@@ -99,31 +98,6 @@ a.crud:hover {
     border-width: 2px;
     padding: 16px;
     transition: padding 2s;
-}
-
-div.formulario {
-    display: flex;
-    flex-direction: column;
-    max-width: 450px;
-    gap: 8px;
-    padding-bottom: 16px;
-}
-
-div.row {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 16px;
-}
-
-select {
-    font-size: 16px;
-    padding: 8px;
-    border-radius: 8px;
-}
-
-div.row input {
-    flex: 1;
 }
 
 /*
