@@ -4,6 +4,14 @@
 <head>
     <title>Cursos</title>
     <link rel="stylesheet" href="./styles.css">
+    <script type="text/javascript" src="/scripts/curso.js"></script>
+    <script type="text/javascript" src="/scripts/alunoApi.js"></script>
+    <script type="text/javascript" src="/scripts/cursoApi.js"></script>
+    <script type="text/javascript">
+        setTimeout(() => {
+            preencherTabela();
+        }, 500)
+    </script>
 </head>
 
 <body>
@@ -42,7 +50,37 @@
         </tbody>
     </table>
     <br>
-    <a class="crud" href="./cursos.html">Novo Curso</a>
+    <form onsubmit="criarCurso(event)">
+        <div class="formulario">
+            <div class="row">
+                <div class="input">
+                    <label>Nome do curso:</label>
+                    <input value="PADRÃO" placeholder="Nome do curso" type="text" name="nome">
+                    <span class="error"></span>
+                </div>
+                <div class="input">
+                    <label>Nome do curso:</label>
+                    <input type="number" min="1" placeholder="Duração" name="duracao">
+                    <span class="error"></span>
+                </div>
+            </div>
+
+            <select name="nivel">
+                <option value="0">Iniciante</option>
+                <option value="1">Intermediário</option>
+                <option value="2">Avançado</option>
+                <option value="3">Expert</option>
+            </select>
+            <div class="input">
+                <label>Nome do curso:</label>
+                <textarea placeholder="Descrição do curso" name="descricao"></textarea>
+                <span class="error"></span>
+            </div>
+            <input name="index" type="hidden" value="-1">
+
+        </div>
+        <button type="submit">Novo Curso</button>
+    </form>
 </body>
 
 </html>
