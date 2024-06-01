@@ -1,4 +1,12 @@
 ﻿
+create sequence alunos_seq;
+
+alter table alunos
+add primary key (codigo);
+
+alter table alunos
+alter column codigo set default nextval('alunos_seq');
+
 create table alunos(
 	codigo integer not null,
 	nome varchar(100),
@@ -33,11 +41,3 @@ alter table inscricao
 add constraint fk_inscricao_curso foreign key (cursoid)
 references cursos(id);
 
-
-create sequence alunos_seq;
-
-alter table alunos
-add primary key (codigo);
-
-alter table alunos
-alter column codigo set default nextval('alunos_seq');
