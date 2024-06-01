@@ -47,4 +47,12 @@ namespace Escola.Api.Controllers
             return valido ? Ok(valido) : UnprocessableEntity(erros);
         }
     }
+<<<<<<< HEAD
 }
+=======
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> d0a0678 (adicionado nhibernate e mapeamento)
+>>>>>>> 1704dbe (arquivos prof)
