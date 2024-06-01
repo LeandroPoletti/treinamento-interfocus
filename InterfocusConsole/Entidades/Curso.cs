@@ -1,15 +1,17 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace InterfocusConsole.Entidades
 {
     public class Curso{
-        public virtual int Id {get; set;}
+        public int Id {get; set;}
+        [Required, StringLength(50, MinimumLength = 5)]
+        public string Nome { get; set; }
+        [Required]
+        public string Descricao {get; set;}
 
-        public virtual string Nome { get; set; }
-
-        public virtual string Descricao {get; set;}
-
-        public virtual NivelCurso Nivel {get; set;}
+        public NivelCurso Nivel {get; set;}
         // 0 - iniciante 1 - intermediario 2 - avançado 3 - expert
-        public virtual int Duracao {get; set;}
+        public int Duracao {get; set;}
 
         // void metodo(){
         //     if (Nivel == NivelCurso.Intermediario)

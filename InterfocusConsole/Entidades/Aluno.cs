@@ -10,7 +10,7 @@ namespace InterfocusConsole.Entidades
         }
         [Required(ErrorMessage = "O nome é obrigatório")]
         [StringLength(40, MinimumLength = 10)]
-        public string Nome { get; set; }
+        public  string Nome { get; set; }
         public DateTime? DataNascimento { get; set; }
         public int Codigo { get; set; }
 
