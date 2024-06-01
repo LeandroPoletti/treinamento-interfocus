@@ -20,14 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     <EmbeddedResource Include="Mappings\Aluno.hbm.xml" />
-=======
->>>>>>> 1704dbe (arquivos prof)
-=======
-    <EmbeddedResource Include="Mappings\Aluno.hbm.xml" />
->>>>>>> 83811aa (adicionado mapeamento de aluno)
     <EmbeddedResource Include="Mappings\Curso.hbm.xml" />
   </ItemGroup>
 

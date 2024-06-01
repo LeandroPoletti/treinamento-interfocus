@@ -27,13 +27,8 @@ builder.Services.AddTransient<AlunoService>();
 builder.Services.AddTransient<CursoService>();
 
 builder.Services.AddCors(
-<<<<<<< HEAD
-    b => b.AddDefaultPolicy(c => 
-        c.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin()
-=======
     b => b.AddDefaultPolicy(
         c=> c.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin()
->>>>>>> f35b26a (api)
     )
 );
 
@@ -42,13 +37,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
-<<<<<<< HEAD
-
 app.UseCors();
-
-=======
-app.UseCors();
->>>>>>> f35b26a (api)
 app.UseAuthorization();
 
 app.UseDeveloperExceptionPage();
