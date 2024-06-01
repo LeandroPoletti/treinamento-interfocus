@@ -43,6 +43,7 @@ function preencherTabela() {
 
 function criarCurso(event){
   let dados = new FormData(event.target)
+  let form = event.target
   let objCurso = {
     nome: dados.get('nome'),
     nivel: Number(dados.get('nivel')),
@@ -51,7 +52,24 @@ function criarCurso(event){
   }
 
   postCurso(objCurso).then(res => {
-    if(res == 200){
+    if(res.status == 200){
+      let tabela = document.getElementById('table-cursos').querySelector('tbody')
+      tabela.innerHTML = ""
+      preencherTabela()
+    }else if (res.status == 422){
+      resultado.json().then(erros =>
+         {
+            erros.forEach(erro =>{
+              const {memberNames, errorMessage} = erro
+              const [campo] = memberNames
+              const input = form.querySelector(`[name=${campo.toLowerCase()}]`)
+              const erroMessage = input.parentNode.querySelector(".error")
+              erroMessage.innerHTML = errorMessage
+            })
+
+         }
+      )
+
       
     }
   })
