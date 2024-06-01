@@ -1,4 +1,4 @@
-﻿namespace InterfocusConsole.Entidades
+namespace InterfocusConsole.Entidades
 {
     public class Curso{
         public virtual int Id {get; set;}
