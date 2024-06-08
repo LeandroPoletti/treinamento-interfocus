@@ -1,13 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
-import Layout from "./layout/Layout.jsx";
-import Home from "./layout/Home.jsx";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+var novaDiv = document.createElement("div");
+
+var novaDiv2 = <div></div>
+
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Layout></Layout>
     <App />
-  </React.StrictMode>
-);
+  </React.StrictMode>,
+)
