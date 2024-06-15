@@ -2,10 +2,17 @@ const URL_API = "http://localhost:5046";
 
 export function listarAlunos(pesquisa) {
     // PROMISE
+<<<<<<< HEAD
 
     var response = pesquisa ?
     fetch(URL_API + "/api/aluno?pesquisa="+pesquisa) :
     fetch(URL_API + "/api/aluno")
+=======
+    var response = pesquisa ?
+        fetch(URL_API + "/api/aluno?pesquisa=" + pesquisa) :
+        fetch(URL_API + "/api/aluno");
+
+>>>>>>> 8389ec7a4a03832c69fd2d7bb56641f98fa2e4b2
     return response;
 }
 

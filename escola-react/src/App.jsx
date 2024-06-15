@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -34,6 +34,14 @@ function App() {
     console.log("2) Efeito componente")
   },[count])
 
+  useEffect(function () {
+    console.log("1) ACIONANDO EFEITO DO COMPONENTE")
+  }, []);
+
+  useEffect(() => {
+    console.log("2) ACIONANDO EFEITO DO COMPONENTE")
+  }, [count]);
+
   return (
     <BrowserRouter routes={[
       {
@@ -42,21 +50,21 @@ function App() {
       },
       {
         path: "alunos",
-        component: <ListaAlunos></ListaAlunos>
+        component: <ListaAlunos a={0} texto="TEXT" seila={true}></ListaAlunos>
       },
       {
         path: "alunos/criar",
         component: <FormAluno></FormAluno>
-      }, 
+      },
       {
         path: "alunos/editar/:codigo",
         component: <FormAluno></FormAluno>
       }
     ]}>
-    <Layout></Layout>
-    <button onClick={() => setCount(count + 1)}>
-      count {count}
-    </button>
+      <button onClick={() => setCount(Math.min(5, count + 1))}>
+        count is {count}
+      </button>
+      <Layout></Layout>
     </BrowserRouter>
   )
 }
