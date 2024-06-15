@@ -7,6 +7,7 @@ import { BrowserRouter } from 'simple-react-routing';
 import Home from './Home';
 import ListaAlunos from './alunos/ListaAlunos';
 import FormAluno from './alunos/FormAluno';
+import CursosList from './cursos/CursosList';
 
 function App() {
   // var numero = 0;
@@ -43,7 +44,9 @@ function App() {
   }, [count]);
 
   return (
-    <BrowserRouter routes={[
+    <BrowserRouter 
+    notFoundPage={<h1>404 - NOT FOUND</h1>}
+    routes={[
       {
         path: "",
         component: <Home></Home>
@@ -59,6 +62,9 @@ function App() {
       {
         path: "alunos/editar/:codigo",
         component: <FormAluno></FormAluno>
+      },{
+        path: "cursos",
+        component: <CursosList></CursosList> 
       }
     ]}>
       <button onClick={() => setCount(Math.min(5, count + 1))}>
