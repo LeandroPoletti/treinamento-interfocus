@@ -9,15 +9,15 @@ import ListaAlunos from './alunos/ListaAlunos';
 import FormAluno from './alunos/FormAluno';
 
 function App() {
-  var numero = 0;
-  var setNumero = (novoNumero) => {
-    numero = novoNumero;
-  }
+  // var numero = 0;
+  // var setNumero = (novoNumero) => {
+  //   numero = novoNumero;
+  // }
 
-  var [x, y] = [0, "teste"];
-  var array = [0, "teste"];
-  x = array[0]
-  y = array[1]
+  // var [x, y] = [0, "teste"];
+  // var array = [0, "teste"];
+  // x = array[0]
+  // y = array[1]
 
   const stateCount = useState(0); // state - hook -> retorna [valor, setValor]
 
