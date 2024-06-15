@@ -60,6 +60,18 @@ namespace InterfocusConsole.Services
             return Aluno;
         }
 
+
+        public Aluno getId(int codigo, out List<ValidationResult> erros){
+            erros = new List<ValidationResult>();
+            using var sessao = session.OpenSession();
+            var Alunos = sessao.Get<Aluno>(codigo);
+            if (Alunos == null){
+                erros.Add(new ValidationResult("Nenhum resultado encontrado"));
+                return null;
+            }
+            
+            return Alunos;
+        }
         public virtual List<Aluno> Listar()
         {
             using var sessao = session.OpenSession();

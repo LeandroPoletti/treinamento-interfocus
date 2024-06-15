@@ -91,7 +91,7 @@ namespace InterfocusConsole.Services
                 .Where(c => c.Nome.Contains(busca) ||
                             c.Descricao.Contains(busca))
                 .OrderBy(c => c.Id)
-                .Take(4)
+                //.Take(4)
                 .ToList();
             return cursos;
         }

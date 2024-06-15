@@ -26,6 +26,18 @@ namespace Escola.Api.Controllers
                 alunoService.Listar(pesquisa);
             return Ok(alunos);
         }
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id){
+            var aluno = alunoService.getId(id, out List<ValidationResult> erros);
+            if (erros.Count > 0)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(aluno);
+            }
+        }
 
         [HttpPost]
         public IActionResult Criar([FromBody] Aluno aluno)
