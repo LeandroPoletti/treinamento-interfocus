@@ -9,14 +9,13 @@ export function listarcursos(pesquisa) {
     return response;
 }
 
-export function getByCodigo(codigo) {
+export function getById(codigo) {
     // PROMISE
-    var response = fetch(URL_API + "/api/curso/" + codigo)
-
+    var response = fetch(URL_API + "/api/curso/" + codigo);
     return response;
 }
 
-export function deletarcurso(id) {
+export function deletarCurso(id) {
     // PROMISE
     var request = {
         method: "DELETE"
@@ -25,10 +24,10 @@ export function deletarcurso(id) {
     return response;
 }
 
-export function postcurso(curso) {
+export function postCurso(curso) {
     // PROMISE
     var request = {
-        method: curso.codigo ? "PUT" : "POST",
+        method: curso.id ? "PUT" : "POST",
         headers: {
             "Content-Type": "application/json"
         },

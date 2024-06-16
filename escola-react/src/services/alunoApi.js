@@ -11,8 +11,7 @@ export function listarAlunos(pesquisa) {
 
 export function getByCodigo(codigo) {
     // PROMISE
-    var response = fetch(URL_API + "/api/aluno/" + codigo)
-
+    var response = fetch(URL_API + "/api/aluno/" + codigo);
     return response;
 }
 

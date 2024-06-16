@@ -1,45 +1,75 @@
-import { useState, useEffect } from "react"
-import { listarcursos } from "../services/cursoApi";
+import { useEffect, useState } from "react";
+import { getById, listarCursos } from "../services/cursoApi";
+import FormCurso from "./FormCurso";
 
-export default  function CursosList(){
+const NIVEIS = [
+    "Iniciante",
+    "Intermediário",
+    "Avançado",
+    "Expert"
+]
 
-    let [cursos, setCursos] = useState([])
-    let [busca, setBusca] = useState("")
+export default function CursosList() {
+
+    var [cursos, setCursos] = useState([]);
+
+    var [curso, setCurso] = useState();
+
+    const [busca, setBusca] = useState("");
 
     useEffect(() => {
-        listarcursos(busca)
+        listarCursos(busca)
             .then(resposta => {
                 if (resposta.status == 200) {
                     resposta.json()
-                        .then(data => {
-                            setCursos(data);
+                        .then(cursos => {
+                            setCursos(cursos);
                         })
                 }
             });
     }, [busca]);
 
+    const getCurso = async (id) => {
+        var result = await getById(id);
+        if (result.status == 200) {
+            var dados = await result.json();
+            setCurso(dados);
+        }
+    }
 
-    return (
-    <>
-        <input type="search"  onChange={a => setBusca(a.target.value)}/>
-        <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Email</th>
-            </tr>
-        </thead>
-        <tbody>
-            {cursos.map(curso => {
-                return <tr key={curso.id}>
-                    <td>{curso.id}</td>
-                    <td>{curso.nome}</td>
-                    <td>{curso.descricao}</td>
+    return (<>
+        <h1>Cursos</h1>
+        <div className="row">
+            <input type="search" value={busca}
+                onChange={(e) => setBusca(e.target.value)} />
+            <button type="button" onClick={() => setCurso({})}>Novo Curso</button>
+        </div>
+
+        <table id="table-cursos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Duração</th>
+                    <th>Nível</th>
+                    <th>Descrição</th>
                 </tr>
-            })}
-        </tbody>
-    </table>
-    </>
-)
+            </thead>
+            <tbody>
+                {cursos.map(curso =>
+                    <tr onClick={() => getCurso(curso.id)} key={curso.id}>
+                        <td>{curso.id}</td>
+                        <td>{curso.nome}</td>
+                        <td>{curso.duracao} horas</td>
+                        <td>{NIVEIS[curso.nivel]}</td>
+                        <td>{curso.descricao}</td>
+                    </tr>
+                )}
+            </tbody>
+        </table>
+        {curso && <FormCurso
+            curso={curso}
+            onClose={() => setCurso(undefined)}
+        ></FormCurso>}
+    </>)
 }
